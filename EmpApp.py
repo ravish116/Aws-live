@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 bucket = custombucket
 region = customregion
-#
+
 # db_conn = connections.Connection(
 #     host=customhost,
 #     port=3306,
@@ -31,11 +31,11 @@ def showaddemp():
 
 @app.route("/showsummary", methods=['GET', 'POST'])
 def showsummary():
+    # cursor = db_conn.cursor()
+    # cursor.execute("select * from table_name")
+    # data = cursor.fetchall()  # data from database
+    # return render_template('ViewSummary.html', value=data)
     return render_template('ViewSummary.html')
-
-@app.route("/about", methods=['POST'])
-def about():
-    return render_template('www.intellipaat.com')
 
 
 @app.route("/addemp", methods=['POST'])

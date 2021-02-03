@@ -1,32 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<style>
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: ;
+}
+
+</style>
+
 <head>
     <meta charset="UTF-8">
     <title>View Summary</title>
     <center>
-    <font color="black" size="4" style="font-family: avenir">
+        <font color="black" size="4" style="font-family: avenir">
 
-        <h1 style="color: Black">Certification Summary for MIS</h1>
+            <h1 style="color: Black">Cloud Certification Summary for MIS</h1>
 
-        <body bgcolor="Red">
+<body style="background-image: url('/static/bg4.jpg');background-size: 100%;" >
 
-        <form action="/viewSummary" autocomplete="on" method="POST" enctype="multipart/form-data">
+<form action="/viewSummary" autocomplete="on" method="POST" enctype="multipart/form-data">
 
+    <table>
+        <tr>
+            <th>FMNO</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Team</th>
+            <th>Location</th>
+            <th>Certificate</th>
+        </tr>
+        <tr>
+            <td>172787</td>
+            <td>Lorem1</td>
+            <td>Ipsum</td>
+            <td>MIS APM</td>
+            <td>GGN</td>
+            <td>AWS Solution Architect Associate</td>
+        </tr>
+        <tr>
+            <td>172788</td>
+            <td>Lorem2</td>
+            <td>Ipsum</td>
+            <td>MIS APM</td>
+            <td>GGN</td>
+            <td>AWS Solution Architect Professional</td>
+        </tr>
+        <tr>
+            <td>172789</td>
+            <td>Lorem3</td>
+            <td>Ipsum</td>
+            <td>MIS APM</td>
+            <td>GGN</td>
+            <td>AWS Solution Architect Associate</td>
+        </tr>
 
-  </form>
+    </table>
+    <br><br>
 
-
-<form action ="/showaddemp" >
-            <button type="submit"
-                    style="background: grey; height: 45px; width: 200px; color: white; size: 5; font:oblique;">Add Certification
-            </button>
 </form>
 
 
+<form action="/showaddemp">
+    <button type="submit"
+            style="background: grey; height: 45px; width: 200px; color: white; size: 5; font:oblique;">Add Certification
+    </button>
+</form>
 
-        </body>
 
-    </font>
+</body>
+
+</font>
 </center>
 </head>
 <body>
