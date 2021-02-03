@@ -10,7 +10,9 @@
 
         <body bgcolor="Skyblue">
 
-        <form action="/addemp" autocomplete="on" method="POST" enctype="multipart/form-data">
+<!--        <form action="/addemp" autocomplete="on" method="POST" enctype="multipart/form-data">-->
+
+              <form autocomplete="on" method="POST" enctype="multipart/form-data">
 
             FMNO<br> <input style="height:25px;font-size:14pt; color:grey;" type="number" name="fmno" autofocus
                             size="40"><br><br>
@@ -55,14 +57,28 @@
             </select><br><br>
 
 
-            <button type="submit"
+            <button type="submit" onclick="Added();"
                     style="background: grey; height: 45px; width: 200px; color: white; size: 5; font:oblique;">Submit
             </button>
 
+        </form>
+
+        <br>
+
+        <form action="/showsummary" >
+            <button type="submit"
+                     style="background: grey; height: 45px; width: 200px; color: white; size: 5; font:oblique;">View Summary
+            </button>
         </form>
 
         </body>
 
     </font>
 </center>
+
+<script>
+function Added() {
+  alert("Hello! your certificate has been added successfully");
+}
+</script>
 </html>
