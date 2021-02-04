@@ -29,6 +29,7 @@ tr:nth-child(even) {
 
             <h1 style="color: Black">Cloud Certification Summary for MIS</h1>
 
+
 <body style="background-image: url('/static/bg4.jpg');background-size: 100%;" >
 
 <form action="/viewSummary" autocomplete="on" method="POST" enctype="multipart/form-data">
@@ -36,36 +37,23 @@ tr:nth-child(even) {
     <table>
         <tr>
             <th>FMNO</th>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th>Name</th>
             <th>Team</th>
             <th>Location</th>
             <th>Certificate</th>
         </tr>
-        <tr>
-            <td>172787</td>
-            <td>Lorem1</td>
-            <td>Ipsum</td>
-            <td>MIS APM</td>
-            <td>GGN</td>
-            <td>AWS Solution Architect Associate</td>
-        </tr>
-        <tr>
-            <td>172788</td>
-            <td>Lorem2</td>
-            <td>Ipsum</td>
-            <td>MIS APM</td>
-            <td>GGN</td>
-            <td>AWS Solution Architect Professional</td>
-        </tr>
-        <tr>
-            <td>172789</td>
-            <td>Lorem3</td>
-            <td>Ipsum</td>
-            <td>MIS APM</td>
-            <td>GGN</td>
-            <td>AWS Solution Architect Associate</td>
-        </tr>
+
+
+        {% for item in value %}
+<tr>
+    <td>{{item[0]}}</td>
+    <td>{{item[1]}}</td>
+    <td>{{item[2]}}</td>
+    <td>{{item[3]}}</td>
+    <td>{{item[4]}}</td>
+
+</tr>
+{% endfor %}
 
     </table>
     <br><br>
