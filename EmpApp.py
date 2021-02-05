@@ -9,27 +9,45 @@ app = Flask(__name__)
 bucket = custombucket
 region = customregion
 
-db_conn = connections.Connection(
-    host=customhost,
-    port=3306,
-    user=customuser,
-    password=custompass,
-    db=customdb
-)
+
 output = {}
 table = 'employee'
 
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
-    return render_template('ViewSummary.html')
+    db_conn = connections.Connection(
+        host=customhost,
+        port=3306,
+        user=customuser,
+        password=custompass,
+        db=customdb
+    )
+    cursor = db_conn.cursor()
+    cursor.execute("select * from employee")
+    data = cursor.fetchall()  # data from database
+    return render_template('ViewSummary.html', value=data)
 
 @app.route("/showaddemp", methods=['GET', 'POST'])
 def showaddemp():
+    db_conn = connections.Connection(
+        host=customhost,
+        port=3306,
+        user=customuser,
+        password=custompass,
+        db=customdb
+    )
     return render_template('AddEmp.html')
 
 @app.route("/showsummary", methods=['GET', 'POST'])
 def showsummary():
+    db_conn = connections.Connection(
+        host=customhost,
+        port=3306,
+        user=customuser,
+        password=custompass,
+        db=customdb
+    )
     cursor = db_conn.cursor()
     cursor.execute("select * from employee")
     data = cursor.fetchall()  # data from database
@@ -39,6 +57,13 @@ def showsummary():
 
 @app.route("/addemp", methods=['POST'])
 def AddEmp():
+    db_conn = connections.Connection(
+        host=customhost,
+        port=3306,
+        user=customuser,
+        password=custompass,
+        db=customdb
+    )
     fmno = request.form['fmno']
     name = request.form['name']
     team = request.form['team']
@@ -46,7 +71,7 @@ def AddEmp():
     certification = request.form['certification']
     # emp_image_file = request.files['emp_image_file']
 
-    insert_sql = "INSERT INTO employee VALUES (%s, %s, %s, %s, %s)"
+    insert_sql = "INSERT INTO employee1 VALUES (%s, %s, %s, %s, %s)"
     cursor = db_conn.cursor()
 
     # if emp_image_file.filename == "":
@@ -80,11 +105,16 @@ def AddEmp():
         # except Exception as e:
         #     return str(e)
 
-    finally:
-        cursor.close()
+    except Exception as e:
+        print(e)
 
-    print("all modification done...")
-    return render_template('ViewSummary.html')
+    finally:
+        print("Entry Done")
+
+    cursor.execute("select * from employee")
+    data = cursor.fetchall()  # data from database
+    return render_template('ViewSummary.html', value=data)
+
 
 
 if __name__ == '__main__':
