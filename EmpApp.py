@@ -17,11 +17,11 @@ table = 'employee'
 @app.route("/", methods=['GET', 'POST'])
 def home():
     db_conn = connections.Connection(
-        host=customhost,
+        host="sm1ajhg6j0477i5.cmuq4uiatswr.ap-southeast-1.rds.amazonaws.com",
         port=3306,
-        user=customuser,
-        password=custompass,
-        db=customdb
+        user="admin",
+        password="admin1234",
+        db="myapp"
     )
     cursor = db_conn.cursor()
     cursor.execute("select * from employee")
@@ -31,22 +31,22 @@ def home():
 @app.route("/showaddemp", methods=['GET', 'POST'])
 def showaddemp():
     db_conn = connections.Connection(
-        host=customhost,
+        host="sm1ajhg6j0477i5.cmuq4uiatswr.ap-southeast-1.rds.amazonaws.com",
         port=3306,
-        user=customuser,
-        password=custompass,
-        db=customdb
+        user="admin",
+        password="admin1234",
+        db="myapp"
     )
     return render_template('AddEmp.html')
 
 @app.route("/showsummary", methods=['GET', 'POST'])
 def showsummary():
     db_conn = connections.Connection(
-        host=customhost,
+        host="sm1ajhg6j0477i5.cmuq4uiatswr.ap-southeast-1.rds.amazonaws.com",
         port=3306,
-        user=customuser,
-        password=custompass,
-        db=customdb
+        user="admin",
+        password="admin1234",
+        db="myapp"
     )
     cursor = db_conn.cursor()
     cursor.execute("select * from employee")
@@ -58,11 +58,11 @@ def showsummary():
 @app.route("/addemp", methods=['POST'])
 def AddEmp():
     db_conn = connections.Connection(
-        host=customhost,
+        host="sm1ajhg6j0477i5.cmuq4uiatswr.ap-southeast-1.rds.amazonaws.com",
         port=3306,
-        user=customuser,
-        password=custompass,
-        db=customdb
+        user="admin",
+        password="admin1234",
+        db="myapp"
     )
     fmno = request.form['fmno']
     name = request.form['name']
